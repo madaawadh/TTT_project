@@ -1,0 +1,103 @@
+@import url(https://fonts.googleapis.com/css?family=Patrick+Hand+SC);
+ html {
+    /* display:flex; 
+     align-items:center;
+     justify-content: center; */
+     /* background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX14997032.jpg); */
+    font-family: 'Patrick Hand SC', cursive;
+    color:#41403E;
+}
+#id4,#id5,#id6,#id7,#id8,#id9{
+    border-top-style: solid;
+    border-top-width: thick;
+    /* border-top-radius: 255px 15px 225px 15px/15px 225px 15px 255px; */
+}
+#id4,#id5,#id1,#id7,#id8,#id2{
+    border-right-style: solid;
+    border-right-width: thick;
+    border-top-right-radius:3px;
+}
+p{
+    text-align: center;
+    margin-top:350px;
+}
+.row{
+    display:inline-block;
+    /* padding: 9px 10px; */
+    width:190px;
+    height: 180px; 
+    /* margin: 1px 1px; */
+    /* background-color:red; */
+    font-size: 150px;
+    /* text-align:center; */
+    /* background-color:red;  */
+    display:flex; 
+     align-items:center;
+     justify-content: center;
+     border-color: #41403E;
+}
+.con{
+    position: absolute;
+    width:600px; 
+    height: 400px;  
+    display: flex;
+     /* justify-content: center;
+    align-content: flex-end;
+    align-items:center; */
+    /* margin-right: 1px; */
+    margin-left: 50px;
+    top:130px;
+    flex-wrap: wrap;  
+z-index:auto;
+}
+h1{
+text-align: center;
+}
+.x::after{
+    content: "X";
+}
+.o::after{
+    content: "O"; 
+   
+}
+/* svg{
+
+}  */
+.svg{
+    position: relative;
+    z-index:1;  
+    /* top:1px;
+    margin-left: 10px;
+    width: 600px; */
+}
+.svg1{
+    width: 800px;
+}
+.line2{
+top:250px;
+}
+.line3{
+top:450px;
+ }
+ .line4{
+    margin-left: 250px;
+ }
+ .line5{
+    margin-left:450px;
+ }
+ /* .line6{
+    margin-left:1px;
+    margin-right:1000px;
+    margin-bottom:1000px
+ } */
+line{
+    stroke-width: 5px;
+}
+.content{
+    position: absolute;
+   margin-left: 350px;
+    /* background-image: url(http://www.graphicsdb.com/data/media/28/notebook%20paper.gif); */
+    width:700px;
+    height:800px;
+    
+}
