@@ -12,7 +12,7 @@ Two Dimnsional array and a lots of loops and if's
 ## Link to GitHub Pages
 
 ## What's next?
-Remade the whole thing
+Remake the whole thing
 ## Credits
 https://code.jquery.com/
 google fonts
