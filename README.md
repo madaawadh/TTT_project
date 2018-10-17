@@ -14,5 +14,5 @@ Two Dimnsional array and a lots of loops and if's
 ## What's next?
 Remake the whole thing
 ## Credits
-https://code.jquery.com/
-google fonts
+* https://code.jquery.com/
+* google fonts
