@@ -10,7 +10,7 @@ HTML-JS-Jquery-css
 ## Thought process/approach
 Two Dimnsional array and a lots of loops and if's
 ## Link to GitHub Pages
-
+https://madaawadh.github.io/TTT_project/
 ## What's next?
 Remake the whole thing
 ## Credits
