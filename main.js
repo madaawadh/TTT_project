@@ -12,109 +12,161 @@ var player = ["x", "o"];
 var equiv = 0;
 var none = 0;
 var str = "";
+var switchp = 0;
+var i = 0;
+var name1, name2, move = 0, mode;
 $(document).ready(function () {
-    var switchp = 0;
+    $('div.con').hide();
+    $('.h2').hide();
+    $('.replay').hide();
+    $('.startG').on('click', function (event) {
+        name1 = document.querySelector('.input1').value;
+        name2 = document.querySelector('.input2').value;
+        $('.p1').append(name1);
+        $('.p2').append(name2);
+        $('div.start').hide();
+        $('div.con').show();
+        $('.h2').show();
+    });
+    $('.m1p').on('click', function (event) {
+        mode = 2;
+        $(".input2").prop('disabled', true);
+    });
+    $('.m2p').on('click', function (event) {
+        mode = 1;
+    });
+    $('.replay').on('click', function (event) {
+        equiv = 0; none = 0;
+        move = 0;
+        $('.row').removeClass("x");
+        $('.row').removeClass("o");
+        $('.replay').hide();
+        $('div.con').show();
+        $('p').hide();
+    });
+    // function action(event) {
     $('.row').on('click', function (event) {
         if (switchp === 0) {
-            $(this).addClass("x");
-            switchp = 1;
-        }
-        else {
-            $(this).addClass("o");
-            switchp = 0;
-        }
-        $(this).off();
-        checkWinner();
-        equiv++;
-    });
-    function checkWinner() {
-        console.log(equiv);
-        for (var i = 0; i < arr2.length; i++) {
-            for (var j = 0; j < player.length; j++) {
-                if ($(arr2[i][0]).hasClass(player[j]) && $(arr2[i][1]).hasClass(player[j])
-                    && $(arr2[i][2]).hasClass(player[j])) {
-                    // console.log("sucssuss");
-                    winLine(player[j], i);
-                    none++;
+            if ($(this).hasClass("x") || $(this).hasClass("o")) {
+
+            } else {
+                if (mode == 1) {
+                    $(this).addClass("x");
+                    equiv += 1;
+                    switchp = 1;
+                    checkWinner();
+
+                } else {
+                    $(this).addClass("x");
+                    equiv += 2;
+                    checkWinner();
+                    makeAmove()
                 }
             }
         }
-        if (equiv == 8 && none == 0) {
-            setTimeout(function () {
-                $('div.con').hide();
-                $('svg').hide();
-                $('p').append("Equivalent");
-            }, 5000);
+        else {
+            if (mode == 1) {
+                if ($(this).hasClass("x") || $(this).hasClass("o")) {
+
+                } else {
+                    $(this).addClass("o");
+                    switchp = 0;
+                    equiv += 1;
+                    checkWinner();
+                }
+            }
+        }
+    });
+
+    function checkWinner() {
+        // console.log(move);
+        for (var i = 0; i < arr2.length; i++) {
+            // var num = 0; var op1, op2;
+            // if (move == 1) {
+            var j = 0; var c; var num1 = 0;
+            while (j < 2) {
+                for (var n = 0; n < 3; n++) {
+                    if ($(arr2[i][n]).hasClass(player[j])) {
+                        c = player[j];
+                        num1 += 1;
+                    } else { break; }
+                    if (num1 === 3) {
+                        none += 1;
+                        move = 1;
+                        winLine(c, i);
+                    }
+                }
+                j++;
+            }
+        }
+        if (equiv >= 9 && none === 0) {
+            str = "Tie";
+            result();
         }
     }
     function winLine(player, i) {
-        $('div').off();
-        setTimeout(function () {
-            $('p').append(str);
-            $('div.con').hide();
-            $('svg').hide();
-        }, 5000);
-        // var x1 = "110"; var y1 = "110";
-        // var x2 = "117"; var y2 = "500"; var classL = "";
         var classS = "svg";
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         var winL = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        console.log("fg");
-        // if (i === 7) {
-        //     x1 = 880;
-        //     y1 = 169;
-        //     x2 = 482;
-        //     y2 = 533;
-        //     classS = "svg1";
-        // } else if (i === 6) {
-        //     x1 = 110;
-        //     y1 = 110;
-        //     x2 = 500;
-        //     y2 = 475;
-        // }
-
+        svg.setAttribute('width', "1000");
+        svg.setAttribute('height', "800");
         winL.setAttribute('x1', arr2[i][3]);
-        console.log("fg");
         winL.setAttribute('y1', arr2[i][4]);
-        console.log("fg");
-        // if ((i === 4) || (i === 5) || (i === 0)) {
-        //     x2 = "800"; y2 = "110";
-        //     console.log("rgthjk")
-        // }
-        // switch (i) {
-        //     case 4:
-        //         classL = "line2";
-        //         break;
-        //     case 5:
-        //         classL = "line3";
-        //         break;
-        //     case 2:
-        //         classL = "line4";
-        //         break;
-        //     case 3:
-        //         classL = "line5";
-        //         break;
-        //     default:
-
-        // }
-        // // winL.setAttribute('class', classL);
         winL.setAttribute('x2', arr2[i][5]);
-        console.log("fg");
         winL.setAttribute('y2', arr2[i][6]);
-        console.log("fg");
-        winL.setAttribute("stroke", "black");
-        console.log("fg");
+        winL.setAttribute("stroke", "white");
+        $("body").append(svg)
         $("svg").addClass(classS);
-        // $("svg").addClass(classL);
         $("svg").append(winL);
-        console.log("fg");
         if (player === "x") {
-            str = "p1 win";
+            str = name1 + " win!";
+            $('.xs').append("x");
         }
         else {
-            str = "p2 win";
-
+            str = name2 + " win!";
+            $('.os').append("o");
         }
-
+        result();
     }
+    function result() {
+        setTimeout(function () {
+            $('p').text(str);
+            $('div.con').hide();
+            $('line').remove();
+            $('svg').hide();
+            $('p').show();
+            $('.replay').show();
+        }, 1000);
+    }
+    function makeAmove() {
+        var op1 = ""; var op2 = "";
+        for (var i = 0; i < arr2.length; i++) {
+            if ($(arr2[i][0]).hasClass("x") && $(arr2[i][1]).hasClass("x") && !$(arr2[i][2]).hasClass("o")) {
+                op2 = arr2[i][2];
+            } else if ($(arr2[i][0]).hasClass("x") && $(arr2[i][2]).hasClass("x") && !$(arr2[i][1]).hasClass("o")) {
+                op2 = arr2[i][1];
+            } else if ($(arr2[i][1]).hasClass("x") && $(arr2[i][2]).hasClass("x") && !$(arr2[i][0]).hasClass("o")) {
+                op2 = arr2[i][0];
+            } else {
+                for (var j = 0; j < 3; j++) {
+                    if (!$(arr2[i][j]).hasClass("o") && !$(arr2[i][j]).hasClass("x")) {
+                        op1 = arr2[i][j];
+                    }
+                }
+            }
+        }
+        if (move == 0) {
+            if (op2 !== "") {
+                $(op2).addClass("o");
+                checkWinner();
+            } else {
 
+                $(op1).addClass("o");
+                checkWinner();
+            }
+        }
+        switchp = 0;
+        move = 0;
+    }
 });
+

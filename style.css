@@ -3,23 +3,90 @@
     /* display:flex; 
      align-items:center;
      justify-content: center; */
-     /* background-image: url(https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX14997032.jpg); */
+     background-image: url(http://www.seekgif.com/uploads/similiar-border-with-chalkboard-background-hd-5.jpeg);
+     /* background-size: auto; */
     font-family: 'Patrick Hand SC', cursive;
-    color:#41403E;
+    background-color: black;
+    color:white;
 }
 #id4,#id5,#id6,#id7,#id8,#id9{
     border-top-style: solid;
     border-top-width: thick;
+    /* border-color: white; */
     /* border-top-radius: 255px 15px 225px 15px/15px 225px 15px 255px; */
 }
 #id4,#id5,#id1,#id7,#id8,#id2{
     border-right-style: solid;
     border-right-width: thick;
+    /* border-color: white; */
     border-top-right-radius:3px;
+}
+
+.h2{
+    display:flex; 
+    /* align-items:center;
+    justify-content: center;  */
+    align-content:space-between;
+    flex-wrap: wrap;
+}
+.p2{
+    position: absolute;
+    margin-left:1150px;
+}
+.p1{
+    position: absolute;
+    /* margin-left:80px; */
+}
+.replay{
+    margin-left:250px;
+    margin-bottom:200px;
+}
+button{
+   width:200px;
+   margin-top:60px;
+   background: transparent;
+   font-family: 'Patrick Hand SC', cursive;
+   color: white;
+   font-size:15px;
+   border:3px solid rgb(35, 133, 77);
+   /* margin-left:80px; */
 }
 p{
     text-align: center;
-    margin-top:350px;
+    /* margin-top:330px; */
+    font-size: 100px;
+}
+input{
+    background:transparent;
+    width: 200px;
+    /* display:block; */
+    color: whitesmoke;
+    text-align:center;
+}
+.input1{
+    margin-left:50px;
+    color:rgb(29, 113, 187);
+    font-size:15px;
+    /* margin-top:170px;  */
+}
+.input2{
+    margin-left:70px;
+    color:rgb(187, 37, 3);
+    font-size:15px;
+}
+.start{
+    display:flex;  
+    align-items:center;
+    justify-content: center; 
+    align-content:center;
+    flex-wrap: wrap; 
+    width:700px;
+    height:200px;
+    margin-top:200px;
+    margin-right:70px;
+}
+.start-text{
+    font-size: 30px;
 }
 .row{
     display:inline-block;
@@ -34,17 +101,13 @@ p{
     display:flex; 
      align-items:center;
      justify-content: center;
-     border-color: #41403E;
+     border-color: whitesmoke;
 }
 .con{
     position: absolute;
     width:600px; 
     height: 400px;  
     display: flex;
-     /* justify-content: center;
-    align-content: flex-end;
-    align-items:center; */
-    /* margin-right: 1px; */
     margin-left: 50px;
     top:130px;
     flex-wrap: wrap;  
@@ -53,50 +116,47 @@ z-index:auto;
 h1{
 text-align: center;
 }
+.xs{
+    color:rgb(29, 113, 187);
+}
+.os{
+    position: absolute;
+    margin-left:1150px;
+    color:rgb(187, 37, 3);
+}
 .x::after{
     content: "X";
+    color:rgb(29, 113, 187);
 }
 .o::after{
     content: "O"; 
-   
+    color:rgb(187, 37, 3);
 }
-/* svg{
-
-}  */
+.row:hover { 
+    background-color: gray;
+}
+button:hover { 
+    background-color: gray;
+}
+.m1p{
+    margin-left:54px;
+    margin-bottom:30px;
+}
+.m2p{
+    margin-bottom:30px;
+}
 .svg{
+    width:"1000";
+    height:"800";
     position: relative;
     z-index:1;  
-    /* top:1px;
-    margin-left: 10px;
-    width: 600px; */
 }
-.svg1{
-    width: 800px;
-}
-.line2{
-top:250px;
-}
-.line3{
-top:450px;
- }
- .line4{
-    margin-left: 250px;
- }
- .line5{
-    margin-left:450px;
- }
- /* .line6{
-    margin-left:1px;
-    margin-right:1000px;
-    margin-bottom:1000px
- } */
 line{
     stroke-width: 5px;
 }
 .content{
     position: absolute;
    margin-left: 350px;
-    /* background-image: url(http://www.graphicsdb.com/data/media/28/notebook%20paper.gif); */
     width:700px;
     height:800px;
     

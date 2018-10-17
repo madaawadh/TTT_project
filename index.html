@@ -12,10 +12,31 @@
 </head>
 
 <body>
+    <div class="h2">
+        <h2 class="p1">player 1:</h2>
+        <div class="xs"></div>
+        <h2 class="p2">player 2:</h2>
+        <div class="os"></div>
+    </div>
+
     <div class="content">
-        <!-- <img href="https://png.pngtree.com/element_origin_min_pic/16/09/12/2357d6cc067c8be.jpg"> -->
-        <h1>ghjk</h1>
+        <h1>Tic-Tac-Toe</h1>
         <p></p>
+        <div class="start">
+            <p class="start-text">1. The game is played on a grid that's 3 squares by 3 squares.<br>
+
+                2. You are X, your friend (or the computer in this case) is O. Players take turns putting their marks
+                in empty squares. <br>
+
+                3. The first player to get 3 of her marks in a row (up, down, across, or diagonally) is the winner.
+                <br>
+                4. When all 9 squares are full, the game is over. If no player has 3 marks in a row, the game ends in a
+                tie.</p>
+            <button class="m1p">1p mode</button> <button class="m2p">2p mode</button>
+            <input type="text" class="input1" value="X Name"><input type="text" class="input2" value="O Name">
+            <button class="startG">Start</button>
+        </div>
+        <button class="replay">play again</button>
         <div class="con">
             <div class="row" id="id1"> </div>
             <div class="row" id="id2"></div>
@@ -28,9 +49,6 @@
             <div class="row" id="id9"></div>
         </div>
     </div>
-    <svg height="800" width="1000">
-        <!-- <line x1="100" y1="100" x2="400" y2="400" style="stroke:rgb(255,0,0);stroke-width:2" /> -->
-    </svg>
     <script src="main.js"></script>
 </body>
 
