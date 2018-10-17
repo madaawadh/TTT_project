@@ -123,7 +123,11 @@ $(document).ready(function () {
             $('.xs').append("x");
         }
         else {
-            str = name2 + " win!";
+            if (mode == 2) {
+                str = "You Lose";
+            } else {
+                str = name2 + " win!";
+            }
             $('.os').append("o");
         }
         result();

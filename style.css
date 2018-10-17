@@ -161,3 +161,9 @@ line{
     height:800px;
     
 }
+::placeholder{
+    color:rgb(29, 113, 187);
+}
+input.input2::placeholder{
+    color:rgb(187, 37, 3);
+}
